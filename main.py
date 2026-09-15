@@ -30,7 +30,7 @@ async def check_and_rename(member: discord.Member):
 
 @bot.event
 async def on_ready():
-    # Цикл пробегается по всем серверам, где есть бот, и проверяет "старых" участников
+    # check all players
     for guild in bot.guilds:
         async for member in guild.fetch_members(limit=None):
             await check_and_rename(member)
