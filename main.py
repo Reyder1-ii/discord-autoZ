@@ -4,6 +4,8 @@ from aiohttp import web
 import asyncio
 import os
 
+discord.VoiceClient.warn_nacl = False
+
 intents = discord.Intents.default()
 intents.members = True
 
@@ -14,6 +16,7 @@ def replace_letters(text: str) -> str:
         return text
     text = text.replace('S', 'Z').replace('s', 'z')
     text = text.replace('С', 'Z').replace('с', 'z')
+    text = text.replace('C', 'Z').replace('c', 'z')
     return text
 
 async def check_and_rename(member: discord.Member):
