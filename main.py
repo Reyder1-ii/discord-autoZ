@@ -16,7 +16,7 @@ def replace_letters(text: str) -> str:
         return text
     text = text.replace('S', 'Z').replace('s', 'Z')
     text = text.replace('С', 'Z').replace('с', 'Z')
-    text = text.replace('C', 'Z').replace('C', 'Z')
+    text = text.replace('C', 'Z').replace('c', 'Z')
     return text
 
 async def check_and_rename(member: discord.Member):
