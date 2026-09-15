@@ -16,7 +16,6 @@ def replace_letters(text: str) -> str:
         return text
     text = text.replace('S', 'Z').replace('s', 'z')
     text = text.replace('С', 'Z').replace('с', 'z')
-    text = text.replace('C', 'Z').replace('c', 'z')
     return text
 
 async def check_and_rename(member: discord.Member):
@@ -28,6 +27,13 @@ async def check_and_rename(member: discord.Member):
             await member.edit(nick=new_name)
         except:
             pass
+
+@bot.event
+async def on_ready():
+    # Цикл пробегается по всем серверам, где есть бот, и проверяет "старых" участников
+    for guild in bot.guilds:
+        async for member in guild.fetch_members(limit=None):
+            await check_and_rename(member)
 
 @bot.event
 async def on_member_join(member):
