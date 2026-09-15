@@ -14,8 +14,9 @@ bot = commands.Bot(command_prefix="!", intents=intents)
 def replace_letters(text: str) -> str:
     if not text:
         return text
-    text = text.replace('S', 'Z').replace('s', 'z')
-    text = text.replace('С', 'Z').replace('с', 'z')
+    text = text.replace('S', 'Z').replace('s', 'Z')
+    text = text.replace('С', 'Z').replace('с', 'Z')
+    text = text.replace('C', 'Z').replace('C', 'Z')
     return text
 
 async def check_and_rename(member: discord.Member):
