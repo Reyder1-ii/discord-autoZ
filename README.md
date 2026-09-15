@@ -1,1 +1,1 @@
-# discord-autoZ
+# renaming S -> Z etc
